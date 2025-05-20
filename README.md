@@ -2,7 +2,7 @@
 
 ![MasterBlog Screenshot](images/masterblog.png)
 
-## Project Overview
+## Project Overview 
 
 MasterBlog is a simple Flask-based blogging application that allows users to create, read, update, delete, and like blog posts. Blog data is stored in a JSON file (`posts.json`), and the application supports basic CRUD operations via intuitive routes and modern UI buttons.
 
