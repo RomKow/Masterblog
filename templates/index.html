@@ -19,12 +19,15 @@
                     <p>{{ post.content }}</p>
                     <p>
                         <!-- Delete link -->
-                        <a href="{{ url_for('delete', post_id=post.id) }}"
-                        class="btn-delete"
-                        onclick="return confirm('Delete post &quot;{{ post.title }}&quot;?');">
-                        Delete
+                        <a href="{{ url_for('update', post_id=post.id) }}"
+                           class="btn-update">
+                           Update
                         </a>
-
+                        <a href="{{ url_for('delete', post_id=post.id) }}"
+                           class="btn-delete"
+                           onclick="return confirm('Delete post &quot;{{ post.title }}&quot;?');">
+                           Delete
+                        </a>
                     </p>
                 </article>
             </div>

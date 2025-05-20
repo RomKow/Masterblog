@@ -53,3 +53,32 @@ h1 {
     outline: 2px solid #e74c3c;     /* sichtbarer Fokus-Ring */
     outline-offset: 2px;
 }
+
+/* Modern Update Button */
+.btn-update {
+    display: inline-block;
+    background-color: #3498db;      /* frisches Blau */
+    color: #ffffff;                 /* weißer Text */
+    padding: 8px 14px;              /* Klickbereich */
+    border: none;
+    border-radius: 4px;             /* abgerundete Ecken */
+    text-decoration: none;          /* kein Unterstrich */
+    font-size: 0.9rem;              /* etwas kleiner */
+    font-weight: bold;
+    cursor: pointer;                /* Zeiger-Cursor */
+    transition: background-color 0.25s ease, transform 0.1s ease;
+    margin-right: 8px;              /* Abstand zum Delete-Button */
+}
+
+.btn-update:hover {
+    background-color: #2980b9;      /* dunkleres Blau on hover */
+}
+
+.btn-update:active {
+    transform: scale(0.98);         /* sanfte Klick-Animation */
+}
+
+.btn-update:focus {
+    outline: 2px solid #3498db;     /* sichtbarer Fokus-Ring */
+    outline-offset: 2px;
+}

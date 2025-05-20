@@ -1,6 +1,6 @@
 import os
 import json
-from flask import Flask, render_template, request, redirect, url_for
+from flask import Flask, render_template, request, redirect, url_for, abort
 
 app = Flask(__name__)
 
@@ -59,14 +59,42 @@ def delete(post_id):
     except (FileNotFoundError, json.JSONDecodeError):
         posts = []
 
-    # Filter out the post to delete
     posts = [post for post in posts if post.get('id') != post_id]
 
-    # Save updated list back to JSON
     with open(DATA_FILE, 'w', encoding='utf-8') as f:
         json.dump(posts, f, ensure_ascii=False, indent=4)
 
     return redirect(url_for('index'))
+
+
+@app.route('/update/<int:post_id>', methods=['GET', 'POST'])
+def update(post_id):
+    """On GET: render form with current post data; on POST: update and redirect."""
+    try:
+        with open(DATA_FILE, 'r', encoding='utf-8') as f:
+            posts = json.load(f)
+    except (FileNotFoundError, json.JSONDecodeError):
+        posts = []
+
+    # Find the post or 404
+    post = next((p for p in posts if p.get('id') == post_id), None)
+    if post is None:
+        abort(404, description="Post not found")
+
+    if request.method == 'POST':
+        # Update fields from form
+        post['author'] = request.form.get('author', '').strip()
+        post['title'] = request.form.get('title', '').strip()
+        post['content'] = request.form.get('content', '').strip()
+
+        # Save back to JSON
+        with open(DATA_FILE, 'w', encoding='utf-8') as f:
+            json.dump(posts, f, ensure_ascii=False, indent=4)
+
+        return redirect(url_for('index'))
+
+    # GET → render form pre-filled
+    return render_template('update.html', post=post)
 
 
 if __name__ == '__main__':
