@@ -82,3 +82,32 @@ h1 {
     outline: 2px solid #3498db;     /* sichtbarer Fokus-Ring */
     outline-offset: 2px;
 }
+
+/* Modern Like Button */
+.btn-like {
+    display: inline-block;
+    background-color: #2ecc71;      /* fresh green */
+    color: #ffffff;                 /* white text */
+    padding: 8px 12px;              /* click area */
+    border: none;
+    border-radius: 4px;             /* rounded corners */
+    text-decoration: none;          /* no underline */
+    font-size: 0.9rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.25s ease, transform 0.1s ease;
+    margin-right: 8px;              /* space to next button */
+}
+
+.btn-like:hover {
+    background-color: #27ae60;      /* darker green on hover */
+}
+
+.btn-like:active {
+    transform: scale(0.98);         /* click animation */
+}
+
+.btn-like:focus {
+    outline: 2px solid #2ecc71;     /* focus ring */
+    outline-offset: 2px;
+}

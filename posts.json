@@ -3,7 +3,8 @@
         "id": 1,
         "author": "John Doe",
         "title": "First Post",
-        "content": "This is my first post. It works well"
+        "content": "This is my first post. It works well",
+        "likes": 2
     },
     {
         "id": 2,
