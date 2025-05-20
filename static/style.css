@@ -25,3 +25,31 @@ h1 {
 .post p {
     margin: 10px 0;
 }
+
+/* Modern Delete Button */
+.btn-delete {
+    display: inline-block;
+    background-color: #e74c3c;      /* kräftiges Rot */
+    color: #ffffff;                 /* weißer Text */
+    padding: 8px 14px;              /* ausreichender Klickbereich */
+    border: none;
+    border-radius: 4px;             /* abgerundete Ecken */
+    text-decoration: none;          /* kein Unterstrich */
+    font-size: 0.9rem;              /* etwas kleiner */
+    font-weight: bold;
+    cursor: pointer;                /* Zeiger-Cursor */
+    transition: background-color 0.25s ease, transform 0.1s ease;
+}
+
+.btn-delete:hover {
+    background-color: #c0392b;      /* dunkleres Rot on hover */
+}
+
+.btn-delete:active {
+    transform: scale(0.98);         /* sanfte Klick-Animation */
+}
+
+.btn-delete:focus {
+    outline: 2px solid #e74c3c;     /* sichtbarer Fokus-Ring */
+    outline-offset: 2px;
+}
